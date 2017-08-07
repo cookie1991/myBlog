@@ -21,9 +21,9 @@ class Article(models.Model):
 
     topped = models.BooleanField('置顶', default=False)
 
-    tag = models.ManyToManyField('Tag', verbose_name='标签', null=True, on_delete=models.SET_NULL)
+    tag = models.ManyToManyField('Tag', verbose_name='标签')
 
-    category = models.ForeignKey('Category', verbose_name='分类', null=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', verbose_name='分类', null=True)
 
     def __str__(self):
         return self.title
