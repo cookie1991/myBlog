@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from blog import views
+from .views import ArticleListView
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('blog.urls')),
+    url(r'^blog/', ArticleListView.as_view(), name='ArticleListView'),
 ]
