@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from .views import ArticleListView, ArticleDetailView
+from .views import ArticleListView, ArticleDetailView, CategoryView, ProjectView
 
 urlpatterns = [
     url(r'^$', ArticleListView.as_view(), name='index'),
     url(r'^article/(?P<article_id>\d+)/$', ArticleDetailView.as_view(), name='detail'),
+    url(r"^category/(?P<cate_id>\d+)$", CategoryView.as_view(), name='category'),
+    url(r"^project/(?P<project_id>\d+)$", ProjectView.as_view(), name='project')
 ]
